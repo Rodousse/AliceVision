@@ -311,7 +311,7 @@ endif()
 # ==============================================================================
 # OpenImageIO
 # ==============================================================================
-find_package(OpenImageIO 2.0.9 REQUIRED)
+find_package(OpenImageIO 2.1.13 REQUIRED)
 if(OPENIMAGEIO_FOUND OR OpenImageIO_FOUND)
   message(STATUS "OpenImageIO found.")
   if(UNIX)
