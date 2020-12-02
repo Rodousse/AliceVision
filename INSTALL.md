@@ -36,7 +36,7 @@ AliceVision depends on:
 * Open Solver Interface (Osi) >= 0.106.10 (internal)
 * Lemon >= 1.3 (internal)
 * OpenEXR >= 2.4.0
-* OpenImageIO >= 2.1.0
+* OpenImageIO >= 2.1.13
 * Geogram >= 1.5.4 (https://gforge.inria.fr/frs/?group_id=5833)
 * MeshSDFilter (internal)
 * OpenMesh (internal)
@@ -164,9 +164,8 @@ In order to build the library with existing versions of the dependencies (e.g. s
 * For OpenEXR library, `OPENEXR_HOME` can be passed pointing to the install directory, e.g.
   `-DOPENEXR_HOME:PATH=/path/to/openexr/install`
 
-* For OpenImageIO library, library and include dir paths can be passed, e.g.
-  `-DOPENIMAGEIO_LIBRARY_DIR_HINTS:PATH=/path/to/oiio/install/lib/`
-and `-DOPENIMAGEIO_INCLUDE_DIR:PATH=/path/to/oiio/install/include/`
+* For OpenImageIO library, `CMAKE_PREFIX_PATH` should be passed pointing at the directory of the OpenImageIO installation, in which `lib/cmake/OpenImageIO/OpenImageIO-config.cmake` can be found.
+  Or a variable `OpenImageIO_DIR` must be set pointing at `<OpenImageIOInstallDir>/lib/cmake/OpenImageIO/OpenImageIO-config.cmake`.
 
 
 
@@ -188,10 +187,6 @@ CMake Options
 
 * GEOGRAM
   `-DGEOGRAM_INSTALL_PREFIX:PATH=path/to/geogram/install`
-
-* OPENIMAGEIO
-  `-DOPENIMAGEIO_LIBRARY_DIR_HINTS:PATH=/path/to/oiio/install/lib/`
-  `-DOPENIMAGEIO_INCLUDE_DIR:PATH=/path/to/oiio/install/include/`
 
 * `BOOST_NO_CXX11` (default `OFF`)
   If your Boost binaries are compiled without C++11 support, you need to set this option to avoid compilation errors.
