@@ -6,5 +6,5 @@ alicevision_add_software(aliceVision_samples_evcorrection
         aliceVision_image
         Boost::program_options
         Boost::filesystem
-        ${OPENIMAGEIO_LIBRARIES} 
+        OpenImageIO::OpenImageIO
 )
